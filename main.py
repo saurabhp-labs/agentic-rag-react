@@ -2,7 +2,14 @@
 CLI entry point - interactive query loop with the ReAct agent.
 Usage: python main.py
 """
+import asyncio
 from agent import create_agent
+
+
+async def run_query(agent, query: str):
+    """Run a single query through the agent."""
+    response = await agent.run(user_msg=query)
+    return response
 
 
 def main():
@@ -29,7 +36,7 @@ def main():
             break
 
         print()
-        response = agent.chat(query)
+        response = asyncio.run(run_query(agent, query))
         print(f"\nAgent: {response}\n")
 
 

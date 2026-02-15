@@ -1,8 +1,8 @@
 # LlamaIndex Core
 llama-index-core>=0.11.0
 
-# LLM - AWS Bedrock
-llama-index-llms-bedrock>=0.3.0
+# LLM - AWS Bedrock (Converse API)
+llama-index-llms-bedrock-converse>=0.12.0
 boto3>=1.35.0
 
 # Embeddings - Local HuggingFace (consistent with LocalRAG)
@@ -17,6 +17,7 @@ chromadb>=0.5.0
 llama-index-readers-file>=0.2.0
 PyMuPDF>=1.24.0
 python-docx>=1.0.0
+docx2txt>=0.8
 
 # Configuration
 pydantic-settings>=2.0.0
