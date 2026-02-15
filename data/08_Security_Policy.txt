@@ -1,0 +1,74 @@
+
+============================================================
+INFORMATION SECURITY POLICY
+============================================================
+
+Effective Date: January 1, 2024 | Policy Owner: Chief Information Security Officer
+
+Organization: DataSecure Financial Services | Document ID: POL-SEC-001 | Version: 3.2
+
+
+1. Purpose
+----------------------------------------
+
+This policy establishes the framework for protecting DataSecure Financial Services information assets, ensuring compliance with regulatory requirements (SOX, GLBA, PCI-DSS), and maintaining customer trust.
+
+
+2. Scope
+----------------------------------------
+
+This policy applies to all employees, contractors, vendors, and third parties who access DataSecure systems, data, or facilities. It covers all information assets including electronic data, physical documents, and verbal communications.
+
+
+3. Data Classification
+----------------------------------------
+
+Confidential: Customer PII, financial records, authentication credentials, encryption keys. Requires encryption at rest and in transit, access limited to need-to-know basis.
+
+Internal: Business strategies, internal communications, employee information. Requires access controls and should not be shared externally without authorization.
+
+Public: Marketing materials, published reports, public website content. No restrictions on distribution.
+
+
+4. Access Control
+----------------------------------------
+
+All access follows the principle of least privilege. Access requests require manager approval and annual recertification. Privileged accounts require additional approval from IT Security. Multi-factor authentication is mandatory for all remote access and privileged accounts.
+
+
+================================================================================
+
+
+5. Password Requirements
+----------------------------------------
+
+Minimum length: 14 characters. Must include uppercase, lowercase, numbers, and special characters. Password expiration: 90 days for standard users, 60 days for privileged accounts. Account lockout after 5 failed attempts. No password reuse for 12 generations.
+
+
+6. Incident Response
+----------------------------------------
+
+All security incidents must be reported to security@datasecure.com or ext. 5555 immediately. Incident severity levels: Critical (active breach), High (potential breach), Medium (policy violation), Low (suspicious activity). Critical incidents require notification to CISO within 1 hour and may require customer notification within 72 hours per regulatory requirements.
+
+
+7. Acceptable Use
+----------------------------------------
+
+Company systems are for business purposes only. Prohibited activities: unauthorized software installation, personal file storage exceeding 1GB, accessing inappropriate content, sharing credentials, disabling security controls, connecting unauthorized devices.
+
+
+8. Physical Security
+----------------------------------------
+
+All facilities require badge access. Visitors must be escorted at all times. Data centers require two-factor authentication. Clean desk policy enforced - sensitive documents must be secured when unattended. Secure shredding required for all printed confidential materials.
+
+
+9. Compliance and Enforcement
+----------------------------------------
+
+Violations may result in disciplinary action up to and including termination. Intentional violations affecting customer data may result in legal action. Annual security awareness training is mandatory for all employees. Compliance audits conducted quarterly by Internal Audit.
+
+Policy Questions: Contact IT Security at security@datasecure.com
+
+Approved by: James Morrison, CISO | Review Date: January 1, 2025
+
