@@ -8,17 +8,33 @@ from llama_index.llms.bedrock_converse import BedrockConverse
 
 from config import config
 from tools.vector_search import create_vector_search_tool
+from tools.file_search import create_file_search_tools
+from tools.web_search import create_web_search_tool
 
 
 SYSTEM_PROMPT = """\
-You are a knowledgeable research assistant with access to a document knowledge base.
+You are a research assistant with access to a local document knowledge base and the web.
+You MUST use tools to answer questions — never answer from your own knowledge alone.
 
-When answering questions:
-1. Use the vector_search tool to find relevant information from the knowledge base.
-2. Answer the user's question DIRECTLY using specific details from the retrieved documents.
-3. Do NOT describe what you found — instead, present the actual information to the user.
-4. If the search results don't contain enough information, say so clearly.
-5. Be concise and direct.
+TOOL SELECTION (choose in this priority order):
+
+1. **vector_search** — ALWAYS try this FIRST for any question that might be answered by \
+the local documents. It searches semantically across all ingested documents (employee handbooks, \
+policies, reports, contracts, manuals, etc.).
+
+2. **file_search** — Use when looking for an exact term, name, number, or phrase. \
+Searches .txt and .docx files by keyword matching.
+
+3. **file_read** — Read the full content of a specific file by name. \
+Use after file_search to get complete context.
+
+4. **web_search** — ONLY use this as a LAST RESORT when the question is clearly about \
+current events, real-time data, or topics that could NOT be in the local documents.
+
+Rules:
+- ALWAYS try vector_search or file_search before web_search.
+- Answer DIRECTLY with specific details from the results. Do NOT summarize what you did.
+- If results are insufficient, try a different tool before giving up.
 """
 
 
@@ -46,7 +62,11 @@ def create_agent(verbose: bool = True) -> AgentWorkflow:
     # Set global LLM so query engines use Bedrock instead of defaulting to OpenAI
     Settings.llm = llm
 
-    tools = [create_vector_search_tool()]
+    tools = [
+        create_vector_search_tool(),
+        *create_file_search_tools(),
+        create_web_search_tool(),
+    ]
 
     return AgentWorkflow.from_tools_or_functions(
         tools_or_functions=tools,

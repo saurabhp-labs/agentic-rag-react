@@ -28,6 +28,9 @@ class Config(BaseSettings):
     data_dir: str = "./data"
     chroma_db_dir: str = "./chroma_db"
 
+    # Tavily Web Search
+    tavily_api_key: str = ""
+
     # Chunking
     chunk_size: int = 512
     chunk_overlap: int = 50
