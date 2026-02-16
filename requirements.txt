@@ -25,6 +25,9 @@ tavily-python>=0.5.0
 # MCP Server
 mcp>=1.0.0
 
+# UI
+streamlit>=1.30.0
+
 # Configuration
 pydantic-settings>=2.0.0
 python-dotenv>=1.0.0
