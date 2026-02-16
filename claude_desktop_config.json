@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "agentic-rag-knowledge-base": {
+      "command": "python",
+      "args": ["C:/Users/LENOVO/Repo/agentic-rag-react/mcp_server.py"],
+      "env": {
+        "EMBEDDING_MODEL": "nomic-ai/nomic-embed-text-v1.5",
+        "CHROMA_DB_DIR": "C:/Users/LENOVO/Repo/agentic-rag-react/chroma_db"
+      }
+    }
+  }
+}
